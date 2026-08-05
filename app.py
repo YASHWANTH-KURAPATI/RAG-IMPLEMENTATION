@@ -41,7 +41,7 @@ class QuestionRequest(BaseModel):
 
 
 def get_api_key() -> str:
-    return os.getenv("GEMINI_API_KEY", "").strip()
+    return os.getenv("GOOGLE_API_KEY", "").strip()
 
 
 @lru_cache(maxsize=1)
@@ -49,7 +49,7 @@ def build_rag():
     api_key = get_api_key()
     if not api_key:
         raise RuntimeError(
-            "GEMINI_API_KEY is not configured. Add GEMINI_API_KEY to your "
+            "GOOGLE_API_KEY is not configured. Add GOOGLE_API_KEY to your "
             "deployment environment variables/secrets and restart the app."
         )
 
