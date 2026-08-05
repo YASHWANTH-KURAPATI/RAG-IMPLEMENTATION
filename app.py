@@ -100,7 +100,7 @@ def make_rag():
 
     # 4. Gemini chat model.
     llm = ChatGoogleGenerativeAI(
-        model=os.getenv("GEMINI_MODEL", "gemini-2.5-flash"),
+        model=os.getenv("GEMINI_MODEL", "gemini-3.6-flash"),
         google_api_key=api_key,
         temperature=0.2,
     )
