@@ -41,7 +41,7 @@ class Question(BaseModel):
 
 @lru_cache(maxsize=1)
 def make_rag():
-    api_key = os.getenv("GEMINI_API_KEY", "").strip()
+    api_key = os.getenv("GOOGLE_API_KEY", "").strip()
     if not api_key:
         raise RuntimeError(
             "No API key configured. Set the GEMINI_API_KEY environment variable on Vercel."
